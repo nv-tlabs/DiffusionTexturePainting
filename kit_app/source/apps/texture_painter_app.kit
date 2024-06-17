@@ -1,0 +1,37 @@
+[package]
+title = "Texture Painter Application"
+
+version = "1.0.0"
+
+description = """This app runs the full kit app and enables the AI Texture Painter Extension"""
+
+# Keywords make  it browseable in UI using the "experience" filter
+keywords = ["app"]
+
+[dependencies]
+"omni.app.full" = {}
+
+"omni.rtx.shadercache.vulkan" = {}
+
+"aitoybox.texture_painter" = {}
+
+[settings.app]
+fastShutdown = true
+
+# Register extension folders from this repo in kit
+# These are the paths where Kit looks for extensions
+# Your application is using Extensions from your application
+# Here they are setup into a single folder "source/extensions" but you can have you own structure if you need
+# see we also add the Extension from the Base application using their extscache
+[settings.app.exts]
+folders.'++' = ["${app}/../exts", "${app}/../extscache/"]
+
+# Extension Registries
+[settings.exts."omni.kit.registry.nucleus"]
+registries = [
+	{ name = "kit/default", url = "https://ovextensionsprod.blob.core.windows.net/exts/kit/prod/shared" },
+	{ name = "kit/sdk", url = "https://ovextensionsprod.blob.core.windows.net/exts/kit/prod/sdk/${kit_version_short}/${kit_git_hash}" },
+	{ name = "kit/community", url = "https://dw290v42wisod.cloudfront.net/exts/kit/community" },
+]
+
+

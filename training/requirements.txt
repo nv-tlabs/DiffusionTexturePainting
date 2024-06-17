@@ -1,0 +1,9 @@
+diffusers[torch]==0.17.0
+accelerate==0.20.3
+transformers==4.29.2
+datasets
+ftfy
+tensorboard
+Jinja2
+scikit-image
+einops
