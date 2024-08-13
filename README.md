@@ -10,7 +10,7 @@ Image attribution: 3D models from Sketchfab [Fantasy House](https://sketchfab.co
 [Hassan Abu Alhaija](http://hassanhaija.com),
 [Seung Wook Kim](https://seung-kim.github.io/seungkim),
 [Masha Shugrina](https://shumash.com) <br>
-**[Paper](https://drive.google.com/file/d/1mPy_hU5KPsxMBCkE6np1jYDTwgNVPqpU/view?usp=sharing), [Project Page](https://research.nvidia.com/labs/toronto-ai/DiffusionTexturePainting/)**
+**[Paper](https://dl.acm.org/doi/10.1145/3641519.3657458), [Project Page](https://research.nvidia.com/labs/toronto-ai/DiffusionTexturePainting/)**
 
 Abstract: *We present a technique that leverages 2D generative diffusion models (DMs) for interactive texture painting on the surface of 3D meshes. Unlike existing texture painting systems, our method allows artists to paint with any complex image texture, and in contrast with traditional texture synthesis, our brush not only generates seamless strokes in real-time, but can inpaint realistic transitions between different textures. To enable this application, we present a stamp-based method that applies an adapted pre-trained DM to inpaint patches in local render space, which is then projected into the texture image, allowing artists control over brush stroke shape and texture orientation. We further present a way to adapt the inference of a pre-trained DM to ensure stable texture brush identity, while allowing the DM to hallucinate infinite variations of the source texture. Our method is the first to use DMs for interactive texture painting, and we hope it will inspire work on applying generative models to highly interactive artist-driven workflows.*
 
