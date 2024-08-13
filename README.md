@@ -18,9 +18,9 @@ For business inquiries, please visit our website and submit the form: [NVIDIA Re
 
 ## Highlights
 * [Getting Started](https://github.com/nv-tlabs/DiffusionTexturePainting#getting-started)
-  * [Model Training / Pretrained Weights](https://github.com/nv-tlabs/DiffusionTexturePainting#)
-  * [TensorRT Inference](https://github.com/nv-tlabs/DiffusionTexturePainting#getting-started)
-  * [Kit App](https://github.com/nv-tlabs/DiffusionTexturePainting#getting-started)
+  * [Model Training / Pretrained Weights](https://github.com/nv-tlabs/DiffusionTexturePainting#1-diffusion-model-training)
+  * [TensorRT Inference](https://github.com/nv-tlabs/DiffusionTexturePainting#2-tensorrt-model-inference)
+  * [Kit App](https://github.com/nv-tlabs/DiffusionTexturePainting#3-diffusion-texture-painting-app)
 * [Kit App Tutorial](https://github.com/nv-tlabs/DiffusionTexturePainting/kit_app/README.md)
 * [License](https://github.com/nv-tlabs/DiffusionTexturePainting#license)
 * [Citation](https://github.com/nv-tlabs/DiffusionTexturePainting#citation)
@@ -36,14 +36,11 @@ a custom image encoder using LoRA. The resulting image encoder checkpoint and Lo
 
 To train the model from scratch, follow the instructions [here](training/README.md).
 
-Download the pretrained models [here](https://drive.google.com/drive/folders/1y0UHVfPFQGiCWeNu9h0UfP8yuW2Qj2N2?usp=sharing). 
-
-Place the model checkpoints in the following folder 
+Download the pretrained models and unzip into the following folder
 ```bash
 cd trt_inference 
-mkdir checkpoints
-cp [path_to_image_encoder_weights] checkpoints/image_encoder.pth
-cp [path_to_lora_weights] checkpoints/pytorch_lora_weights.bin
+wget https://nvidia-caat.s3.us-east-2.amazonaws.com/diffusion_texture_painting_model.zip
+unzip diffusion_texture_painting_model.zip
 ```
 
 ### 2. TensorRT Model Inference
