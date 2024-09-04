@@ -1034,7 +1034,7 @@ class UNet(BaseModel):
         self.lora_scale = 1.0
 
     def get_model(self):
-        model_opts = {'revision': 'fp16', 'torch_dtype': torch.float16} if self.fp16 else {}
+        model_opts = {'variant': 'fp16', 'torch_dtype': torch.float16} if self.fp16 else {}
         unet = UNet2DConditionModel.from_pretrained(self.path,
                                                     subfolder="unet",
                                                     use_auth_token=self.hf_token,

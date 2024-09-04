@@ -48,6 +48,11 @@ unzip diffusion_texture_painting_model.zip
 This module accelerate the diffusion model inference speed using TensorRT. The model inference is isolated in a docker container
 and communicates with the Texture Painting App via websocket. 
 
+> [!IMPORTANT]  
+> "runwayml/stable-diffusion-inpainting" is no longer available. 
+> The model can be found on huggingface https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting or downloaded from https://www.modelscope.cn/models/AI-ModelScope/stable-diffusion-inpainting/files. 
+> Please update the model name in https://github.com/nv-tlabs/DiffusionTexturePainting/blob/main/trt_inference/models.py#L813 accordingly. If necessary, pass your HF_TOKEN in the docker run command to authenticate.
+
 #### Docker setup
 
 Install nvidia-docker using [these intructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
@@ -63,7 +68,7 @@ Launch docker (first time will take longer to build the trt model)
 ```bash
 cd trt_inference
 mkdir engine  # cache the built trt model files
-docker run -it --rm --gpus all -p 6060:6060 -v $PWD/engine:/workspace/engine texture-painter
+docker run -it --rm --gpus all -p 6060:6060 -v $PWD:/workspace -e HF_TOKEN='hf_...' texture-painter
 ```
 Wait until you see "TRTConditionalInpainter ready", that means it has successfully built the trt model. Then you can exit and continue below.
 

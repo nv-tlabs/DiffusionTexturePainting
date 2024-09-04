@@ -8,6 +8,7 @@
 # without an express license agreement from NVIDIA CORPORATION or
 # its affiliates is strictly prohibited.
 
+import os
 import time
 import torch
 import tensorrt as trt
@@ -29,6 +30,7 @@ class TRTConditionalInpainter(ConditionalInpainterBase):
         print(f"Initializing TensorRT Plugins")
         # Register TensorRT plugins
         trt.init_libnvinfer_plugins(TRT_LOGGER, '')
+        hf_token = os.environ.get('HF_TOKEN', '')
 
         self.pipeline = InpaintPipeline(
             scheduler="DDIM",
@@ -36,7 +38,7 @@ class TRTConditionalInpainter(ConditionalInpainterBase):
             denoising_steps=20,
             texture_guidance_steps=20,
             version="1.5",
-            hf_token="",
+            hf_token=hf_token,
             verbose=False,
             nvtx_profile=False,
             max_batch_size=16,

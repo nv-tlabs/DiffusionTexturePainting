@@ -22,8 +22,13 @@ If you need access to our pexels dataset for evaluation, please open an issue.
 ## Training with LoRA
 **___Note: To monitor the training progress, we regularly generate sample images which are visualized on tensorboard (by default) or wandb (requires `pip install wandb`)___**
 
+> [!IMPORTANT]  
+> "runwayml/stable-diffusion-inpainting" is no longer available. 
+> The model can be found on huggingface https://huggingface.co/benjamin-paine/stable-diffusion-v1-5-inpainting or downloaded from https://www.modelscope.cn/models/AI-ModelScope/stable-diffusion-inpainting/files. 
+> Please update the `--pretrained_model_name_or_path` in the script below to reproduce our training. If necessary, set the HF_TOKEN environment variable to authenticate.
 
 ```bash
+export HF_TOKEN='hf_...'
 accelerate launch train_texture_inpaint_lora.py \
   --pretrained_model_name_or_path="runwayml/stable-diffusion-inpainting" \
   --image_folder="dtd/images" \
