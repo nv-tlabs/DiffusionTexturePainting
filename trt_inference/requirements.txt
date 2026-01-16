@@ -1,20 +1,20 @@
-colored
-cuda-python
+colored==1.4.4
+cuda-python==12.1.0
 diffusers==0.12.0
-ftfy
-matplotlib
-nvtx
+ftfy==6.2.0
+matplotlib==3.6.2
+nvtx==0.2.5
 onnx==1.12.0
 --extra-index-url https://pypi.ngc.nvidia.com
 onnx-graphsurgeon==0.3.25
 onnxruntime==1.13.1
 polygraphy==0.43.1
-scipy
+scipy==1.6.3
 transformers==4.25.1
 
-flask
-accelerate
-python-magic
-kornia
+flask==3.0.3
+accelerate==0.32.1
+python-magic==0.4.27
+kornia==0.7.3
 git+https://github.com/openai/CLIP.git
-positional-encodings[pytorch]
+positional-encodings[pytorch]==6.0.3
